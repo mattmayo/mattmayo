@@ -1,0 +1,2 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[1],{141:function(e,n,t){"use strict";Object.defineProperty(n,"__esModule",{value:!0});var o=t(0);n.default=function(){return o.createElement("h1",null,"mattmayo.com")}}}]);
+//# sourceMappingURL=component---src-pages-index-tsx-f11c188cb15921a08c5d.js.map
