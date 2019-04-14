@@ -5,9 +5,12 @@
   "version": "0.1.0",
   "author": "Matt Mayo <matt_mayo@icloud.com>",
   "dependencies": {
+    "@material-ui/core": "^3.9.3",
+    "@types/material-ui": "^0.21.6",
     "@types/react": "^16.8.13",
     "@types/react-dom": "^16.8.4",
-    "gatsby": "^2.3.16",
+    "@types/react-helmet": "^5.0.8",
+    "gatsby": "^2.0.120",
     "gatsby-image": "^2.0.37",
     "gatsby-plugin-manifest": "^2.0.28",
     "gatsby-plugin-offline": "^2.0.25",
@@ -16,12 +19,16 @@
     "gatsby-plugin-ts-loader": "^0.1.0",
     "gatsby-source-filesystem": "^2.0.29",
     "gatsby-transformer-sharp": "^2.1.17",
+    "graphql": "^14.2.1",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-helmet": "^5.2.0"
   },
   "devDependencies": {
-    "prettier": "^1.17.0"
+    "gatsby-cli": "^2.5.7",
+    "gh-pages": "^2.0.1",
+    "prettier": "^1.17.0",
+    "tslint-config-prettier": "^1.18.0"
   },
   "keywords": [
     "mattmayo"
@@ -30,6 +37,7 @@
   "scripts": {
     "build": "gatsby build",
     "develop": "gatsby develop",
+    "deploy": "gatsby build && gh-pages -d public",
     "format": "prettier --write src/**/*.{js,jsx,ts,tsx}",
     "start": "npm run develop",
     "serve": "gatsby serve",
