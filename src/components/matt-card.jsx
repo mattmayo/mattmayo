@@ -1,5 +1,11 @@
 import * as React from 'react';
-import { Card, CardContent, Typography } from '@material-ui/core';
+import {
+  Button,
+  Card,
+  CardActions,
+  CardContent,
+  Typography
+} from '@material-ui/core';
 import { graphql, useStaticQuery } from 'gatsby';
 import Img from 'gatsby-image';
 
@@ -24,14 +30,26 @@ const MattCard = () => {
         justifyContent: 'center'
       }}
     >
-      <Card>
+      <Card style={{ minWidth: '300px' }}>
         <CardContent>
-          {console.log(data.file.childImageSharp.fluid)}
           <Img fluid={data.file.childImageSharp.fluid} alt="Matt and Elvis" />
-          <Typography align={'center'} component="h3" variant="h3">
-            mattmayo.com
-          </Typography>
         </CardContent>
+        <CardActions>
+          <Button
+            href="https://www.linkedin.com/in/mayomatt/"
+            color="primary"
+            size="small"
+          >
+            LinkedIn
+          </Button>
+          <Button
+            href="https://twitter.com/matt_mayo"
+            color="primary"
+            size="small"
+          >
+            Twitter
+          </Button>
+        </CardActions>
       </Card>
     </div>
   );
