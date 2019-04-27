@@ -1,0 +1,2 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[2],{142:function(a){a.exports={pages:[{componentChunkName:"component---src-pages-index-jsx",jsonName:"index",path:"/"}],dataPaths:{"dev-404-page-5f9":"829/path---dev-404-page-5-f-9-fab-o7af702RpOxvpRo1x1JR8NttFI",index:"140/path---index-6a9-0SUcWyAf8ecbYDsMhQkEfPzV8","sq--src-components-matt-card-jsx":446504939}}}}]);
+//# sourceMappingURL=pages-manifest-7095fcd341254755a067.js.map
