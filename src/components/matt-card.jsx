@@ -1,7 +1,5 @@
-import { Card, CardContent, Typography } from '@material-ui/core';
-import { graphql } from 'gatsby';
-import Img from 'gatsby-image';
 import * as React from 'react';
+import { Card, CardContent, Typography } from '@material-ui/core';
 
 const MattCard = () => (
   <div>
