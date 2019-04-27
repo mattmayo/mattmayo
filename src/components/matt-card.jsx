@@ -12,10 +12,24 @@ import Img from 'gatsby-image';
 const MattCard = () => {
   const data = useStaticQuery(graphql`
     query {
-      file(relativePath: { eq: "matt-elvis-1.png" }) {
+      mattElvis: file(relativePath: { eq: "matt-elvis-1.png" }) {
         childImageSharp {
           fluid {
             ...GatsbyImageSharpFluid
+          }
+        }
+      }
+      linkedInLogo: file(relativePath: { eq: "linkedin-logo.png" }) {
+        childImageSharp {
+          fixed(width: 14) {
+            ...GatsbyImageSharpFixed
+          }
+        }
+      }
+      twitterLogo: file(relativePath: { eq: "twitter-logo-blue.png" }) {
+        childImageSharp {
+          fixed(width: 24) {
+            ...GatsbyImageSharpFixed
           }
         }
       }
@@ -32,7 +46,10 @@ const MattCard = () => {
     >
       <Card style={{ minWidth: '300px' }}>
         <CardContent>
-          <Img fluid={data.file.childImageSharp.fluid} alt="Matt and Elvis" />
+          <Img
+            fluid={data.mattElvis.childImageSharp.fluid}
+            alt="Matt and Elvis"
+          />
         </CardContent>
         <CardActions>
           <Button
@@ -40,14 +57,26 @@ const MattCard = () => {
             color="primary"
             size="small"
           >
-            LinkedIn
+            <div style={{ display: 'flex', alignItems: 'center' }}>
+              <Img
+                fixed={data.linkedInLogo.childImageSharp.fixed}
+                alt="Twitter logo"
+              />
+              <span style={{ paddingLeft: '4px' }}>LinkedIn</span>
+            </div>
           </Button>
           <Button
             href="https://twitter.com/matt_mayo"
             color="primary"
             size="small"
           >
-            Twitter
+            <div style={{ display: 'flex', alignItems: 'center' }}>
+              <Img
+                fixed={data.twitterLogo.childImageSharp.fixed}
+                alt="Twitter logo"
+              />
+              <span>Twitter</span>
+            </div>
           </Button>
         </CardActions>
       </Card>
