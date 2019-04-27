@@ -1,11 +1,5 @@
 import * as React from 'react';
-import {
-  Button,
-  Card,
-  CardActions,
-  CardContent,
-  Typography
-} from '@material-ui/core';
+import { Button, Card, CardActions, CardContent } from '@material-ui/core';
 import { graphql, useStaticQuery } from 'gatsby';
 import Img from 'gatsby-image';
 
