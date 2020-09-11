@@ -20,13 +20,6 @@ const MattCard = () => {
           }
         }
       }
-      twitterLogo: file(relativePath: { eq: "twitter-logo-blue.png" }) {
-        childImageSharp {
-          fixed(width: 24) {
-            ...GatsbyImageSharpFixed
-          }
-        }
-      }
     }
   `);
 
@@ -57,19 +50,6 @@ const MattCard = () => {
                 alt="Twitter logo"
               />
               <span style={{ paddingLeft: '4px' }}>LinkedIn</span>
-            </div>
-          </Button>
-          <Button
-            href="https://twitter.com/matt_mayo"
-            color="primary"
-            size="small"
-          >
-            <div style={{ display: 'flex', alignItems: 'center' }}>
-              <Img
-                fixed={data.twitterLogo.childImageSharp.fixed}
-                alt="Twitter logo"
-              />
-              <span>Twitter</span>
             </div>
           </Button>
         </CardActions>
