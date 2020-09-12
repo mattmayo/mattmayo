@@ -13,10 +13,11 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
 
+      - name: Install npm packages
+        run:  npm install
+
       - name: Running linter
-        run:  |
-          npm install
-          npm run lint
+        run:  npm run lint
   test:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
