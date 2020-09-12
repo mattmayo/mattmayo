@@ -1,6 +1,6 @@
 name: CI
 
-on: [push, pull_request]
+on: pull_request
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
@@ -13,10 +13,11 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
 
+      - name: Install npm packages
+        run:  npm install
+
       - name: Running linter
-        run:  |
-          npm install
-          npm run lint
+        run:  npm run lint
   test:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
@@ -26,10 +27,11 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
 
+      - name: Install npm packages
+        run:  npm install
+
       - name: Running tests
-        run: |
-          npm install
-          npm run test
+        run: npm run test
   build:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
@@ -39,7 +41,8 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
 
+      - name: Install npm packages
+        run:  npm install
+
       - name: Running build
-        run: |
-          npm install
-          npm run build
+        run: npm run build
