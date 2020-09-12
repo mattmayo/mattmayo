@@ -27,10 +27,11 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
 
+      - name: Install npm packages
+        run:  npm install
+
       - name: Running tests
-        run: |
-          npm install
-          npm run test
+        run: npm run test
   build:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
@@ -40,7 +41,8 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
 
+      - name: Install npm packages
+        run:  npm install
+
       - name: Running build
-        run: |
-          npm install
-          npm run build
+        run: npm run build
