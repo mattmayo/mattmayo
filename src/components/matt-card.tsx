@@ -1,9 +1,9 @@
-import * as React from 'react';
+import React from 'react';
 import { Button, Card, CardActions, CardContent } from '@material-ui/core';
 import { graphql, useStaticQuery } from 'gatsby';
 import Img from 'gatsby-image';
 
-const MattCard = () => {
+const MattCard: React.FC = () => {
   const data = useStaticQuery(graphql`
     query {
       mattElvis: file(relativePath: { eq: "matt-elvis-1.png" }) {

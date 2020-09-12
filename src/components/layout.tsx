@@ -1,7 +1,10 @@
-import * as React from 'react';
+import React from 'react';
 import { Helmet } from 'react-helmet';
 
-const Layout = ({ children }) => (
+interface LayoutPropTypes {
+  children: React.ReactNode
+}
+const Layout: React.FC<LayoutPropTypes> = ({ children }: LayoutPropTypes) => (
   <React.Fragment>
     <Helmet>
       <meta name="viewport" content="width=device-width" />
