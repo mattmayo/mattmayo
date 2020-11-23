@@ -28,7 +28,7 @@ const MattCard: React.FC = () => {
       style={{
         marginTop: '16px',
         display: 'flex',
-        justifyContent: 'center'
+        justifyContent: 'center',
       }}
     >
       <Card style={{ minWidth: '300px' }}>
