@@ -2,7 +2,7 @@ import React from 'react';
 import { Helmet } from 'react-helmet';
 
 interface LayoutPropTypes {
-  children: React.ReactNode
+  children: React.ReactNode;
 }
 const Layout: React.FC<LayoutPropTypes> = ({ children }: LayoutPropTypes) => (
   <React.Fragment>
