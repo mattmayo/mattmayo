@@ -19,6 +19,13 @@ const MattCard: React.FC = () => {
           }
         }
       }
+      gitHubLogo: file(relativePath: { eq: "github-logo.png" }) {
+        childImageSharp {
+          fixed(width: 64) {
+            ...GatsbyImageSharpFixed
+          }
+        }
+      }
     }
   `);
 
@@ -29,15 +36,25 @@ const MattCard: React.FC = () => {
           fluid={data.mattElvis.childImageSharp.fluid}
           alt="Matt and Elvis"
         />
-        <a href="https://www.linkedin.com/in/mayomatt/">
-          <div className="mt-2">
-            <Img
-              fixed={data.linkedInLogo.childImageSharp.fixed}
-              alt="Twitter logo"
-            />
-            <span className="font-sans p-2">LinkedIn</span>
-          </div>
-        </a>
+        <div className="flex flex-row">
+          <a href="https://www.linkedin.com/in/mayomatt/">
+            <div className="mt-2">
+              <Img
+                fixed={data.linkedInLogo.childImageSharp.fixed}
+                alt="LinkedIn logo"
+              />
+              <span className="font-sans p-2">LinkedIn</span>
+            </div>
+          </a>
+          <a href="https://github.com/mattmayo">
+            <div className="mt-2">
+              <Img
+                fixed={data.gitHubLogo.childImageSharp.fixed}
+                alt="GitHub logo"
+              />
+            </div>
+          </a>
+        </div>
       </div>
     </div>
   );
