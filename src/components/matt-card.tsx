@@ -1,5 +1,4 @@
 import React from 'react';
-import { Button, Card, CardActions, CardContent } from '@material-ui/core';
 import { graphql, useStaticQuery } from 'gatsby';
 import Img from 'gatsby-image';
 
@@ -24,36 +23,22 @@ const MattCard: React.FC = () => {
   `);
 
   return (
-    <div
-      style={{
-        marginTop: '16px',
-        display: 'flex',
-        justifyContent: 'center',
-      }}
-    >
-      <Card style={{ minWidth: '300px' }}>
-        <CardContent>
-          <Img
-            fluid={data.mattElvis.childImageSharp.fluid}
-            alt="Matt and Elvis"
-          />
-        </CardContent>
-        <CardActions>
-          <Button
-            href="https://www.linkedin.com/in/mayomatt/"
-            color="primary"
-            size="small"
-          >
-            <div style={{ display: 'flex', alignItems: 'center' }}>
-              <Img
-                fixed={data.linkedInLogo.childImageSharp.fixed}
-                alt="Twitter logo"
-              />
-              <span style={{ paddingLeft: '4px' }}>LinkedIn</span>
-            </div>
-          </Button>
-        </CardActions>
-      </Card>
+    <div className="flex h-screen items-center">
+      <div className="m-4 mx-auto p-4 rounded-sm shadow w-60 md:w-96">
+        <Img
+          fluid={data.mattElvis.childImageSharp.fluid}
+          alt="Matt and Elvis"
+        />
+        <a href="https://www.linkedin.com/in/mayomatt/">
+          <div className="mt-2">
+            <Img
+              fixed={data.linkedInLogo.childImageSharp.fixed}
+              alt="Twitter logo"
+            />
+            <span className="font-sans p-2">LinkedIn</span>
+          </div>
+        </a>
+      </div>
     </div>
   );
 };
