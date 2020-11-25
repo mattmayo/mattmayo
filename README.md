@@ -1,4 +1,6 @@
 
+![CI](https://github.com/mattmayo/mattmayo/workflows/CI/badge.svg)
+
 ## This is my personal website mattmayo.com
 This serves as a playground so that I can code and learn about web technologies and frameworks. While it is simple now, I plan to continue to add more content.
 
@@ -31,7 +33,7 @@ This serves as a playground so that I can code and learn about web technologies 
 * [Webpack](https://webpack.js.org)
     * Code [transpiler](https://en.wikipedia.org/wiki/Source-to-source_compiler) and module bundler
 
-# How to setup the development environment
+## How to setup the development environment
 1. Install [Node.js](https://nodejs.org/), the long term support (LTS) version. 
     1. I recommend using [nvm](https://github.com/nvm-sh/nvm), but this is not required as long as you have Node.js installed.
     1. You will also be using [Node Package Manager](https://www.npmjs.com) (npm), but this comes with Node, so it doesn't need to be installed explicitly.
@@ -45,7 +47,7 @@ This serves as a playground so that I can code and learn about web technologies 
     ```
 1. Navigate to http://localhost:8000 and voilà!
 
-# How to to deploy
+## How to to deploy
 Currently, the repo is not setup to deploy automatically and this will need to be done from a local workstation.
 1. If you haven't already, install packages.
     ```sh
