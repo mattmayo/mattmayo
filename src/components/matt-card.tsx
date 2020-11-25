@@ -14,14 +14,14 @@ const MattCard: React.FC = () => {
       }
       linkedInLogo: file(relativePath: { eq: "linkedin-logo.png" }) {
         childImageSharp {
-          fixed(width: 14) {
+          fixed(height: 24) {
             ...GatsbyImageSharpFixed
           }
         }
       }
       gitHubLogo: file(relativePath: { eq: "github-logo.png" }) {
         childImageSharp {
-          fixed(width: 64) {
+          fixed(height: 28) {
             ...GatsbyImageSharpFixed
           }
         }
@@ -36,14 +36,13 @@ const MattCard: React.FC = () => {
           fluid={data.mattElvis.childImageSharp.fluid}
           alt="Matt and Elvis"
         />
-        <div className="flex flex-row">
+        <div className="flex flex-row mt-4">
           <a href="https://www.linkedin.com/in/mayomatt/">
             <div className="mt-2">
               <Img
                 fixed={data.linkedInLogo.childImageSharp.fixed}
                 alt="LinkedIn logo"
               />
-              <span className="font-sans p-2">LinkedIn</span>
             </div>
           </a>
           <a href="https://github.com/mattmayo">
