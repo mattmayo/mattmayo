@@ -30,7 +30,7 @@ const MattCard: React.FC = () => {
   `);
 
   return (
-    <div className="flex h-screen items-center">
+    <div className="bg-whitesmoke flex h-screen items-center">
       <div className="m-4 mx-auto p-4 rounded-sm shadow w-60 md:w-96">
         <Img
           fluid={data.mattElvis.childImageSharp.fluid}
