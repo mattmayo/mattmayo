@@ -9,32 +9,32 @@ const IndexPage: React.FC = () => {
     query {
       mattElvis: file(relativePath: { eq: "matt-elvis-1.png" }) {
         childImageSharp {
-          fluid(maxWidth: 420) {
-            ...GatsbyImageSharpFluid
+          fluid {
+            ...GatsbyImageSharpFluid_withWebp_tracedSVG
             ...GatsbyImageSharpFluidLimitPresentationSize
           }
         }
       }
       mattMayoWritten: file(relativePath: { eq: "matt-mayo-written.png" }) {
         childImageSharp {
-          fluid(maxWidth: 400) {
-            ...GatsbyImageSharpFluid
+          fluid {
+            ...GatsbyImageSharpFluid_withWebp_tracedSVG
             ...GatsbyImageSharpFluidLimitPresentationSize
           }
         }
       }
       linkedInLogo: file(relativePath: { eq: "linkedin-logo.png" }) {
         childImageSharp {
-          fluid(maxWidth: 400) {
-            ...GatsbyImageSharpFluid
+          fluid {
+            ...GatsbyImageSharpFluid_withWebp_tracedSVG
             ...GatsbyImageSharpFluidLimitPresentationSize
           }
         }
       }
       gitHubLogo: file(relativePath: { eq: "github-logo.png" }) {
         childImageSharp {
-          fluid(maxWidth: 400) {
-            ...GatsbyImageSharpFluid
+          fluid {
+            ...GatsbyImageSharpFluid_withWebp_tracedSVG
             ...GatsbyImageSharpFluidLimitPresentationSize
           }
         }
@@ -52,14 +52,14 @@ const IndexPage: React.FC = () => {
               fluid={data.mattElvis.childImageSharp.fluid}
             />
           </div>
-          <div className="mt-4 w-64">
+          <div className="mt-4 w-48 md:w-64">
             <Img
               alt="Matt Mayo"
               fluid={data.mattMayoWritten.childImageSharp.fluid}
             />
           </div>
         </div>
-        <div className="m-2 w-48">
+        <div className="m-2 w-32 md:w-48">
           <a href="https://www.linkedin.com/in/mayomatt/">
             <Img
               alt="LinkedIn logo"
@@ -67,7 +67,7 @@ const IndexPage: React.FC = () => {
             />
           </a>
         </div>
-        <div className="m-2 w-40">
+        <div className="m-2 w-28 md:w-40">
           <a href="https://github.com/mattmayo">
             <Img
               alt="GitHub logo"
