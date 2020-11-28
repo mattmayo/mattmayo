@@ -66,3 +66,8 @@ Currently, the repo is not setup to deploy automatically and this will need to b
 - [ ] Add metrics for things like page visits
 - [ ] Add monitoring for when the site goes down, etc.
 - [ ] Add more content!
+
+In progress work at [Revamp Personal Website (2020)](https://github.com/mattmayo/mattmayo/projects/1) project space
+
+Issues backlog via [issues page](https://github.com/mattmayo/mattmayo/issues)
+
