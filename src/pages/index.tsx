@@ -5,7 +5,9 @@ import 'tailwindcss/tailwind.css';
 
 const IndexPage: React.FC = () => (
   <Layout>
-    <MattCard />
+    <div className="bg-whitesmoke">
+      <MattCard />
+    </div>
   </Layout>
 );
 
