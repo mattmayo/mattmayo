@@ -44,6 +44,7 @@
   "license": "MIT",
   "scripts": {
     "build": "gatsby build",
+    "clean": "gatsby clean",
     "develop": "gatsby develop",
     "deploy": "gatsby build && gh-pages -d public",
     "format": "prettier --write src/**/*.{js,jsx,ts,tsx}",
