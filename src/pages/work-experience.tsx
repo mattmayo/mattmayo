@@ -3,20 +3,9 @@ import { graphql, useStaticQuery } from 'gatsby';
 import Img from 'gatsby-image';
 import Layout from '../components/layout';
 import 'tailwindcss/tailwind.css';
-import { experience } from '../text/work-experience';
+import { getExperience } from '../text/work-experience';
 
-const buildCompanyExperience = (experience, data) => {
-  // tbd pass this into experience function so we don't have to declare this here
-  experience[0].photo = data.mattCarta1.childImageSharp.fluid;
-  experience[1].photo = data.mattCarta1.childImageSharp.fluid;
-  experience[2].photo = data.mattCarta1.childImageSharp.fluid;
-  experience[3].photo = data.mattCarta1.childImageSharp.fluid;
-  experience[4].photo = data.mattCarta1.childImageSharp.fluid;
-  experience[5].photo = data.mattCarta1.childImageSharp.fluid;
-  experience[6].photo = data.mattCarta1.childImageSharp.fluid;
-  experience[7].photo = data.mattCarta1.childImageSharp.fluid;
-  experience[8].photo = data.mattCarta1.childImageSharp.fluid;
-
+const buildCompanyExperience = (experience) => {
   return experience.map((company, index) => {
     const CompanyPhoto = () => (
       <div className="flex-none m-4 w-48 md:w-64">
@@ -61,6 +50,72 @@ const WorkExperiencePage: React.FC = () => {
           }
         }
       }
+      mattEBay1: file(relativePath: { eq: "matt-ebay-1.png" }) {
+        childImageSharp {
+          fluid {
+            ...GatsbyImageSharpFluid_withWebp_tracedSVG
+            ...GatsbyImageSharpFluidLimitPresentationSize
+          }
+        }
+      }
+      mattFiveStars1: file(relativePath: { eq: "matt-fivestars-1.png" }) {
+        childImageSharp {
+          fluid {
+            ...GatsbyImageSharpFluid_withWebp_tracedSVG
+            ...GatsbyImageSharpFluidLimitPresentationSize
+          }
+        }
+      }
+      mattRocketLawyer1: file(
+        relativePath: { eq: "matt-rocket-lawyer-1.png" }
+      ) {
+        childImageSharp {
+          fluid {
+            ...GatsbyImageSharpFluid_withWebp_tracedSVG
+            ...GatsbyImageSharpFluidLimitPresentationSize
+          }
+        }
+      }
+      mattZynga1: file(relativePath: { eq: "matt-zynga-1.png" }) {
+        childImageSharp {
+          fluid {
+            ...GatsbyImageSharpFluid_withWebp_tracedSVG
+            ...GatsbyImageSharpFluidLimitPresentationSize
+          }
+        }
+      }
+      mattPayPal1: file(relativePath: { eq: "matt-paypal-1.png" }) {
+        childImageSharp {
+          fluid {
+            ...GatsbyImageSharpFluid_withWebp_tracedSVG
+            ...GatsbyImageSharpFluidLimitPresentationSize
+          }
+        }
+      }
+      mattSynApps1: file(relativePath: { eq: "matt-syn-apps-1.png" }) {
+        childImageSharp {
+          fluid {
+            ...GatsbyImageSharpFluid_withWebp_tracedSVG
+            ...GatsbyImageSharpFluidLimitPresentationSize
+          }
+        }
+      }
+      mattITRACS1: file(relativePath: { eq: "matt-itracs-1.png" }) {
+        childImageSharp {
+          fluid {
+            ...GatsbyImageSharpFluid_withWebp_tracedSVG
+            ...GatsbyImageSharpFluidLimitPresentationSize
+          }
+        }
+      }
+      mattInterTel1: file(relativePath: { eq: "matt-inter-tel-1.png" }) {
+        childImageSharp {
+          fluid {
+            ...GatsbyImageSharpFluid_withWebp_tracedSVG
+            ...GatsbyImageSharpFluidLimitPresentationSize
+          }
+        }
+      }
     }
   `);
 
@@ -69,7 +124,7 @@ const WorkExperiencePage: React.FC = () => {
       <div className="">
         <div className="m-8 text-4xl text-center">Work Experience</div>
         <hr />
-        {buildCompanyExperience(experience, data)}
+        {buildCompanyExperience(getExperience(data))}
       </div>
     </Layout>
   );
