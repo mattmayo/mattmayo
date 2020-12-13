@@ -5,8 +5,8 @@ import Layout from '../components/layout';
 import 'tailwindcss/tailwind.css';
 import { getExperience } from '../text/work-experience';
 
-const buildCompanyExperience = (experience, window) => {
-  return experience.map((company, index) => {
+const buildCompanyExperience = (experience) => {
+  return experience.map((company) => {
     const CompanyPhoto = () => (
       <div className="md:flex-none md:m-4 w-full md:w-96">
         <Img alt={company.photoAltText} fluid={company.photo} />
@@ -23,17 +23,8 @@ const buildCompanyExperience = (experience, window) => {
     return (
       <React.Fragment key={company.name}>
         <div className="md:flex md:m-4 lg:mx-16">
-          {index % 2 && window && window.innerWidth > 768 ? (
-            <>
-              <CompanyInfo />
-              <CompanyPhoto />
-            </>
-          ) : (
-            <>
-              <CompanyPhoto />
-              <CompanyInfo />
-            </>
-          )}
+          <CompanyPhoto />
+          <CompanyInfo />
         </div>
         <hr className="my-4" />
       </React.Fragment>
@@ -121,15 +112,12 @@ const WorkExperiencePage: React.FC = () => {
     }
   `);
 
-  // eslint-disable-next-line no-undef
-  const windowVariable = global ? global.window : undefined;
-
   return (
     <Layout>
       <div className="">
         <div className="m-8 text-4xl text-center">Work Experience</div>
         <hr />
-        {buildCompanyExperience(getExperience(data), windowVariable)}
+        {buildCompanyExperience(getExperience(data))}
       </div>
     </Layout>
   );
