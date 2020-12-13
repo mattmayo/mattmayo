@@ -8,33 +8,35 @@ import { getExperience } from '../text/work-experience';
 const buildCompanyExperience = (experience) => {
   return experience.map((company, index) => {
     const CompanyPhoto = () => (
-      <div className="flex-none m-4 w-48 md:w-64">
+      <div className="md:flex-none md:m-4 w-full md:w-96">
         <Img alt={company.photoAltText} fluid={company.photo} />
       </div>
     );
     const CompanyInfo = () => (
-      <div className="m-4">
+      <div className="m-4 text-justify">
         <div className="text-2xl">{company.name}</div>
         <div>{company.companyDescription}</div>
         <br />
         <div>{company.workDescription}</div>
       </div>
     );
-
     return (
-      <div className="flex m-4 lg:mx-16" key={company.name}>
-        {index % 2 ? (
-          <>
-            <CompanyInfo />
-            <CompanyPhoto />
-          </>
-        ) : (
-          <>
-            <CompanyPhoto />
-            <CompanyInfo />
-          </>
-        )}
-      </div>
+      <React.Fragment key={company.name}>
+        <div className="md:flex md:m-4 lg:mx-16">
+          {index % 2 && window.innerWidth > 768 ? (
+            <>
+              <CompanyInfo />
+              <CompanyPhoto />
+            </>
+          ) : (
+            <>
+              <CompanyPhoto />
+              <CompanyInfo />
+            </>
+          )}
+        </div>
+        <hr className="my-4" />
+      </React.Fragment>
     );
   });
 };
