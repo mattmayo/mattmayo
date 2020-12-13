@@ -1,3 +1,4 @@
+// eslint-disable-next-line no-undef
 module.exports = {
   purge: ['./src/**/*.tsx'],
   darkMode: false, // or 'media' or 'class'

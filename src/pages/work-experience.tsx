@@ -121,12 +121,15 @@ const WorkExperiencePage: React.FC = () => {
     }
   `);
 
+  // eslint-disable-next-line no-undef
+  const windowVariable = global && global.window;
+
   return (
     <Layout>
       <div className="">
         <div className="m-8 text-4xl text-center">Work Experience</div>
         <hr />
-        {buildCompanyExperience(getExperience(data), global.window)}
+        {buildCompanyExperience(getExperience(data), windowVariable)}
       </div>
     </Layout>
   );
