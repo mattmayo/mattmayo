@@ -1,5 +1,5 @@
 import React from 'react';
-import { graphql, useStaticQuery } from 'gatsby';
+import { graphql, Link, useStaticQuery } from 'gatsby';
 import Img from 'gatsby-image';
 import Layout from '../components/layout';
 import 'tailwindcss/tailwind.css';
@@ -58,6 +58,9 @@ const IndexPage: React.FC = () => {
               fluid={data.mattMayoWritten.childImageSharp.fluid}
             />
           </div>
+        </div>
+        <div className="hover:underline mb-4 md:mb-6 text-3xl md:text-4xl">
+          <Link to="/work-experience">Work Experience</Link>
         </div>
         <div className="m-2 w-32 md:w-48">
           <a href="https://www.linkedin.com/in/mayomatt/">
