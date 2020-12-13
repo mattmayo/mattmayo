@@ -122,7 +122,7 @@ const WorkExperiencePage: React.FC = () => {
   `);
 
   // eslint-disable-next-line no-undef
-  const windowVariable = global && global.window;
+  const windowVariable = global ? global.window : undefined;
 
   return (
     <Layout>
