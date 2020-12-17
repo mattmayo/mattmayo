@@ -1,33 +1,18 @@
 import React from 'react';
 import { graphql, useStaticQuery } from 'gatsby';
 import Img from 'gatsby-image';
-import 'tailwindcss/tailwind.css';
 import Layout from '../components/layout';
+import 'tailwindcss/tailwind.css';
 import { getExperience } from '../text/work-experience';
-import { useWindowSize } from '../utils/window-resize';
 
-const buildCompanyExperience = (
-  experience,
-  windowWidth
-): React.ReactFragment => {
-  return experience.map((company, index) => {
-    const xsmall = 384;
-    const medium = 768;
-
-    let photoClasses = 'md:flex-none md:m-4 w-full md:w-96';
-
-    if (windowWidth < xsmall) {
-      photoClasses = 'w-full';
-    } else if (windowWidth < medium) {
-      photoClasses = 'm-auto w-96';
-    }
-
-    const CompanyPhoto: React.FC = () => (
-      <div className={photoClasses}>
+const buildCompanyExperience = (experience) => {
+  return experience.map((company) => {
+    const CompanyPhoto = () => (
+      <div className="md:flex-none md:m-4 w-full md:w-96">
         <Img alt={company.photoAltText} fluid={company.photo} />
       </div>
     );
-    const CompanyInfo: React.FC = () => (
+    const CompanyInfo = () => (
       <div className="m-4 text-justify">
         <div className="text-2xl">{company.name}</div>
         <div>{company.companyDescription}</div>
@@ -37,17 +22,10 @@ const buildCompanyExperience = (
     );
     return (
       <React.Fragment key={company.name}>
-        {index % 2 && windowWidth > medium ? (
-          <div className="md:flex md:m-4 lg:mx-16">
-            <CompanyInfo />
-            <CompanyPhoto />
-          </div>
-        ) : (
-          <div className="md:flex md:m-4 lg:mx-16">
-            <CompanyPhoto />
-            <CompanyInfo />
-          </div>
-        )}
+        <div className="md:flex md:m-4 lg:mx-16">
+          <CompanyPhoto />
+          <CompanyInfo />
+        </div>
         <hr className="my-4" />
       </React.Fragment>
     );
@@ -134,14 +112,12 @@ const WorkExperiencePage: React.FC = () => {
     }
   `);
 
-  const windowWidth = useWindowSize().innerWidth;
-
   return (
     <Layout>
       <div className="">
         <div className="m-8 text-4xl text-center">Work Experience</div>
         <hr />
-        {buildCompanyExperience(getExperience(data), windowWidth)}
+        {buildCompanyExperience(getExperience(data))}
       </div>
     </Layout>
   );
