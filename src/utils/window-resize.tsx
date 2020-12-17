@@ -12,10 +12,10 @@ function getSize(): WindowSizes {
   const window = global.window;
 
   return {
-    innerHeight: window.innerHeight,
-    innerWidth: window.innerWidth,
-    outerHeight: window.outerHeight,
-    outerWidth: window.outerWidth,
+    innerHeight: window?.innerHeight,
+    innerWidth: window?.innerWidth,
+    outerHeight: window?.outerHeight,
+    outerWidth: window?.outerWidth,
   };
 }
 
