@@ -7,10 +7,7 @@ interface WindowSizes {
   outerWidth: number;
 }
 
-function getSize(): WindowSizes {
-  // eslint-disable-next-line no-undef
-  const window = global.window;
-
+function getSize(window): WindowSizes {
   return {
     innerHeight: window?.innerHeight,
     innerWidth: window?.innerWidth,
@@ -20,16 +17,29 @@ function getSize(): WindowSizes {
 }
 
 export function useWindowSize(): WindowSizes {
-  const [windowSize, setWindowSize] = useState(getSize());
+  // eslint-disable-next-line no-undef
+  const window = global.window;
+
+  const [windowSize, setWindowSize] = useState(getSize(window));
 
   const handleResize = (): void => {
-    setWindowSize(getSize());
+    // eslint-disable-next-line no-console
+    console.log('resize', getSize(window));
+    setWindowSize(getSize(window));
+  };
+
+  const handleLoad = (): void => {
+    // eslint-disable-next-line no-console
+    console.log('load', getSize(window));
+    setWindowSize(getSize(window));
   };
 
   useEffect(() => {
     window.addEventListener('resize', handleResize);
+    window.addEventListener('load', handleLoad);
     return (): void => {
       window.removeEventListener('resize', handleResize);
+      window.removeEventListener('load', handleLoad);
     };
   }, []);
 

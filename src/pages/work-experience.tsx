@@ -14,7 +14,7 @@ const buildCompanyExperience = (
     const xsmall = 384;
     const medium = 768;
 
-    let photoClasses = 'md:flex-none md:m-4 w-full md:w-96';
+    let photoClasses = 'md:flex-none md:m-4 md:w-96';
 
     if (windowWidth < xsmall) {
       photoClasses = 'w-full';
@@ -135,6 +135,8 @@ const WorkExperiencePage: React.FC = () => {
   `);
 
   const windowWidth = useWindowSize().innerWidth;
+  // eslint-disable-next-line no-console
+  console.log(windowWidth);
 
   return (
     <Layout>
