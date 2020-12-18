@@ -34,7 +34,7 @@ const Layout: React.FC<LayoutPropTypes> = ({
         <meta property="og:type" content="website" />
         <meta
           property="og:image"
-          content={data.mattElvis.childImageSharp.fluid}
+          content={data.mattElvis.childImageSharp.fluid.src}
         />
         <title>{title}</title>
       </Helmet>
