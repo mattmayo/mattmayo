@@ -3,3 +3,5 @@
  *
  * See: https://www.gatsbyjs.org/docs/browser-apis/
  */
+
+import 'tailwindcss/tailwind.css';
