@@ -1,0 +1,2 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[4],{"i6+/":function(e,t,n){"use strict";n.r(t);var a=n("q1tI"),o=n.n(a),c=n("9Dj+");t.default=function(){return o.a.createElement(c.a,{description:"This is a placeholder page for any page that cannot be found.",title:"404 Not Found"},o.a.createElement("p",{className:"m-16 text-center"},"Matt's lost. Can you let him know?"))}}}]);
+//# sourceMappingURL=component---src-pages-404-tsx-e5b5d005bc6e81f5ebb0.js.map
