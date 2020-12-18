@@ -42,7 +42,7 @@ const IndexPage: React.FC = () => {
   `);
 
   return (
-    <Layout title="Matt Mayo - Home Page">
+    <Layout title="Matt Mayo">
       <div className="bg-whitesmoke flex flex-col items-center md:justify-center h-screen">
         <div className="bg-white flex flex-col items-center m-8 p-4 rounded-sm shadow">
           <div className="w-64 md:w-96">
