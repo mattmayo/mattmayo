@@ -112,7 +112,10 @@ const WorkExperiencePage: React.FC = () => {
   `);
 
   return (
-    <Layout title="Work Experience">
+    <Layout
+      description="Matt Mayo's work experience and highlights from his career."
+      title="Work Experience"
+    >
       <ul>
         <li key="heading">
           <div className="m-8 text-4xl text-center">Work Experience</div>
