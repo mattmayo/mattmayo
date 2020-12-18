@@ -1,0 +1,2 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[3],{"i6+/":function(t,e,n){"use strict";n.r(e);var a=n("q1tI"),o=n.n(a);e.default=function(){return o.a.createElement("p",{className:"m-16 text-center"},"Matt's lost. Can you let him know?")}}}]);
+//# sourceMappingURL=component---src-pages-404-tsx-006c6d059b8dc4b4d9d5.js.map
