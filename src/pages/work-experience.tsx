@@ -5,14 +5,14 @@ import Layout from '../components/layout';
 import 'tailwindcss/tailwind.css';
 import { getExperience } from '../text/work-experience';
 
-const buildCompanyExperience = (experience) => {
+const buildCompanyExperience = (experience): React.ReactElement => {
   return experience.map((company) => {
-    const CompanyPhoto = () => (
+    const CompanyPhoto = (): React.ReactElement => (
       <div className="md:flex-none md:m-4 w-full md:w-96">
         <Img alt={company.photoAltText} fluid={company.photo} />
       </div>
     );
-    const CompanyInfo = () => (
+    const CompanyInfo = (): React.ReactElement => (
       <div className="m-4 text-justify">
         <div className="text-2xl">{company.name}</div>
         <div>{company.companyDescription}</div>
@@ -21,13 +21,13 @@ const buildCompanyExperience = (experience) => {
       </div>
     );
     return (
-      <React.Fragment key={company.name}>
+      <li key={company.name}>
         <div className="md:flex md:m-4 lg:mx-16">
           <CompanyPhoto />
           <CompanyInfo />
         </div>
         <hr className="my-4" />
-      </React.Fragment>
+      </li>
     );
   });
 };
@@ -114,11 +114,13 @@ const WorkExperiencePage: React.FC = () => {
 
   return (
     <Layout>
-      <div className="">
-        <div className="m-8 text-4xl text-center">Work Experience</div>
-        <hr />
+      <ul>
+        <li key="heading">
+          <div className="m-8 text-4xl text-center">Work Experience</div>
+          <hr />
+        </li>
         {buildCompanyExperience(getExperience(data))}
-      </div>
+      </ul>
     </Layout>
   );
 };
