@@ -112,7 +112,7 @@ const WorkExperiencePage: React.FC = () => {
   `);
 
   return (
-    <Layout>
+    <Layout title="Work Experience">
       <ul>
         <li key="heading">
           <div className="m-8 text-4xl text-center">Work Experience</div>
