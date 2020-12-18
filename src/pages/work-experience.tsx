@@ -2,7 +2,6 @@ import React from 'react';
 import { graphql, useStaticQuery } from 'gatsby';
 import Img from 'gatsby-image';
 import Layout from '../components/layout';
-import 'tailwindcss/tailwind.css';
 import { getExperience } from '../text/work-experience';
 
 const buildCompanyExperience = (experience): React.ReactElement => {

@@ -2,7 +2,6 @@ import React from 'react';
 import { graphql, Link, useStaticQuery } from 'gatsby';
 import Img from 'gatsby-image';
 import Layout from '../components/layout';
-import 'tailwindcss/tailwind.css';
 
 const IndexPage: React.FC = () => {
   const data = useStaticQuery(graphql`
