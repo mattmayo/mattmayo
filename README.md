@@ -1,7 +1,7 @@
 
 ![CI](https://github.com/mattmayo/mattmayo/workflows/CI/badge.svg)
 
-## This is my personal website mattmayo.com
+## This is my personal website mattmayo.com (past version as I'm using postcard now)
 This serves as a playground so that I can code and learn about web technologies and frameworks. While it is simple now, I plan to continue to add more content.
 
 ## Some of the technologies used
