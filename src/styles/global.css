@@ -1,0 +1,12 @@
+@import "open-props/style";
+@import "open-props/normalize";
+
+:root {
+  --font-sans: system-ui, sans-serif;
+}
+
+body {
+  font-family: var(--font-sans);
+  color: var(--gray-9);
+  background: var(--gray-0);
+}
