@@ -6,43 +6,64 @@ import headshot from "../assets/headshot.jpg";
 const experience = [
   {
     slug: "drumwave",
+    dates: "2024-now",
     company: "DrumWave",
+    title: "Sr. Engineering Manager",
+    location: "Mountain View",
     detail:
       "Started as a technical lead on a single 3-engineer team, then moved into managing two teams totaling 13 developers. Leading the build of the core consumer and business experience from 0 to 1.",
   },
   {
     slug: "hipcamp",
+    dates: "2022-23",
     company: "Hipcamp",
+    title: "Sr. Engineering Manager",
+    location: "Remote",
     detail:
       "Led globally distributed Host experience engineering teams across the US and UK, spanning 3 teams, 10 engineers, and 2 managers. Shipped a new checkout experience and new tooling and integrations for professional campgrounds, including an updated data model to support it. Promoted 2 engineers and moved one into management.",
   },
   {
     slug: "affirm",
+    dates: "2021-22",
     company: "Affirm",
+    title: "Engineering Manager",
+    location: "Remote",
     detail:
       "Led fraud detection for buy now, pay later loans; launched fraud systems into new markets including Australia. Grew the team from 5 to 11 while increasing diversity.",
   },
   {
     slug: "carta",
+    dates: "2019-20",
     company: "Carta",
+    title: "Engineering Manager",
+    location: "San Francisco",
     detail:
       "Led internal tools and a globally distributed team spanning San Francisco, Toronto, Brazil, and Belarus, including remote hiring and ramp-up across multiple contracting groups. Drove technical design across billing and contract-generation systems.",
   },
   {
     slug: "ebay",
+    dates: "2016-19",
     company: "eBay",
+    title: "Member of Technical Staff",
+    location: "San Francisco",
     detail:
       "Owned a full-stack domain end to end, from data storage through back-end services to front end, deployed on Google Cloud. Led a specialized web shopping experience for the China market and helped set the bar for front-end hiring org-wide.",
   },
   {
     slug: "fivestars",
+    dates: "2014-16",
     company: "FiveStars",
+    title: "Lead iPhone Developer",
+    location: "San Francisco",
     detail:
       "Took the FiveStars iOS app from solo project to a team effort, shipping an industry-first check-in experience using Apple's iBeacon framework. Brought the app from a 1-star to 4+ star rating while holding a 99.9% crash-free rate.",
   },
   {
     slug: "paypal",
+    dates: "2010-13",
     company: "PayPal",
+    title: "Tech Solutions Architect",
+    location: "San Jose",
     detail:
       "Led a team of nine engineers to re-platform PayPal's customer-facing reporting infrastructure onto a multi-data-center design serving a 100M+ customer base.",
   },
@@ -78,13 +99,17 @@ const experience = [
     </p>
 
     <p class="cmd"><span class="prompt">guest@mattmayo</span><span class="prompt-sym">:~$</span> ls -la experience/</p>
-    <pre class="listing">2024-now  drw-  DrumWave   Sr. Engineering Manager    Mountain View
-2022-23   drw-  Hipcamp    Sr. Engineering Manager    Remote
-2021-22   drw-  Affirm     Engineering Manager        Remote
-2019-20   drw-  Carta      Engineering Manager        San Francisco
-2016-19   drw-  eBay       Member of Technical Staff  San Francisco
-2014-16   drw-  FiveStars  Lead iPhone Developer      San Francisco
-2010-13   drw-  PayPal     Tech Solutions Architect   San Jose</pre>
+    <div class="listing">
+      {experience.map((role) => (
+        <div class="listing-row">
+          <span class="listing-dates">{role.dates}</span>
+          <span class="listing-flag">drw-</span>
+          <span class="listing-company">{role.company}</span>
+          <span class="listing-title">{role.title}</span>
+          <span class="listing-location">{role.location}</span>
+        </div>
+      ))}
+    </div>
 
     {experience.map((role) => (
       <>
@@ -222,13 +247,24 @@ const experience = [
 
   .listing {
     margin: 0 0 6px 16px;
-    max-width: calc(100% - 16px);
-    overflow-x: auto;
     font-size: 13.5px;
     line-height: 1.9;
     color: #e8a94f;
-    white-space: pre;
     font-family: inherit;
+  }
+
+  .listing-row {
+    display: grid;
+    grid-template-columns: 8ch 4ch 9ch 25ch 13ch;
+    column-gap: 2ch;
+  }
+
+  .listing-flag {
+    color: #cf8c2f;
+  }
+
+  .listing-company {
+    color: #ffe3b0;
   }
 
   .detail {
@@ -264,6 +300,33 @@ const experience = [
   @media (max-width: 40em) {
     .whoami {
       flex-wrap: wrap;
+    }
+
+    .listing-row {
+      grid-template-columns: none;
+      grid-template-areas: "dates company" "title title" "location location";
+      column-gap: 8px;
+      margin-bottom: 10px;
+    }
+
+    .listing-dates {
+      grid-area: dates;
+    }
+
+    .listing-flag {
+      display: none;
+    }
+
+    .listing-company {
+      grid-area: company;
+    }
+
+    .listing-title {
+      grid-area: title;
+    }
+
+    .listing-location {
+      grid-area: location;
     }
   }
 </style>
