@@ -16,8 +16,98 @@ import headshot from "../assets/headshot.jpg";
     <div class="intro">
       <h1>Matt Mayo</h1>
       <p class="role">Senior Engineering Manager at DrumWave, based in Palo Alto, California.</p>
-      <p class="bio">I build and lead teams that ship fintech, fraud, and infrastructure systems at scale.</p>
+      <p class="bio">
+        I build and lead engineering teams that ship fraud detection and infrastructure systems
+        at scale &mdash; from BNPL fraud platforms to globally distributed engineering orgs
+        spanning multiple clouds. I stay hands-on: designing systems, reviewing code, and working
+        directly alongside the teams I lead.
+      </p>
+      <div class="links">
+        <a href="https://www.linkedin.com/in/mayomatt/" target="_blank" rel="noopener">LinkedIn</a>
+      </div>
     </div>
+  </section>
+
+  <section class="experience">
+    <h2>Experience</h2>
+    <ol class="timeline">
+      <li>
+        <div class="timeline-header">
+          <h3>Senior Engineering Manager, DrumWave</h3>
+          <span class="dates">2024 &ndash; Present &middot; Mountain View, CA</span>
+        </div>
+        <p>
+          Started as a technical lead on a single 3-engineer team, then moved into managing two
+          teams totaling 13 developers. Lead the build of the core consumer and business
+          experience from 0 to 1.
+        </p>
+      </li>
+      <li>
+        <div class="timeline-header">
+          <h3>Senior Engineering Manager, Hipcamp</h3>
+          <span class="dates">2022 &ndash; 2023 &middot; Remote</span>
+        </div>
+        <p>
+          Led globally distributed Host experience engineering teams across the US and UK,
+          spanning 3 teams, 10 engineers, and 2 managers. Shipped a new checkout experience and
+          new tooling and integrations for professional campgrounds, including an updated data
+          model to support it. Promoted 2 engineers and moved one into management.
+        </p>
+      </li>
+      <li>
+        <div class="timeline-header">
+          <h3>Engineering Manager, Affirm</h3>
+          <span class="dates">2021 &ndash; 2022 &middot; Remote</span>
+        </div>
+        <p>
+          Led fraud detection for buy now, pay later loans; launched fraud systems into new
+          markets including Australia. Grew the team from 5 to 11 while increasing diversity.
+        </p>
+      </li>
+      <li>
+        <div class="timeline-header">
+          <h3>Engineering Manager, Carta</h3>
+          <span class="dates">2019 &ndash; 2020 &middot; San Francisco, CA</span>
+        </div>
+        <p>
+          Led internal tools and a globally distributed team spanning San Francisco, Toronto,
+          Brazil, and Belarus, including remote hiring and ramp-up across multiple contracting
+          groups. Drove technical design across billing and contract-generation systems.
+        </p>
+      </li>
+      <li>
+        <div class="timeline-header">
+          <h3>Member of Technical Staff, eBay</h3>
+          <span class="dates">2016 &ndash; 2019 &middot; San Francisco, CA</span>
+        </div>
+        <p>
+          Owned a full-stack domain end to end, from data storage through back-end services to
+          front end. Led a specialized web shopping experience for the China market and helped
+          set the bar for front-end hiring org-wide.
+        </p>
+      </li>
+      <li>
+        <div class="timeline-header">
+          <h3>Lead iPhone Developer, FiveStars</h3>
+          <span class="dates">2014 &ndash; 2016 &middot; San Francisco, CA</span>
+        </div>
+        <p>
+          Took the FiveStars iOS app from solo project to a team effort, shipping an
+          industry-first check-in experience using Apple's iBeacon framework. Brought the app
+          from a 1-star to 4+ star rating while holding a 99.9% crash-free rate.
+        </p>
+      </li>
+      <li>
+        <div class="timeline-header">
+          <h3>Technical Solutions Architect, PayPal</h3>
+          <span class="dates">2010 &ndash; 2013 &middot; San Jose, CA</span>
+        </div>
+        <p>
+          Led a team of nine engineers to re-platform PayPal's customer-facing reporting
+          infrastructure onto a multi-data-center design serving a 100M+ customer base.
+        </p>
+      </li>
+    </ol>
   </section>
 </Layout>
 
@@ -63,6 +153,65 @@ import headshot from "../assets/headshot.jpg";
     margin: 0;
   }
 
+  .links {
+    display: flex;
+    gap: var(--size-4);
+  }
+
+  .links a {
+    font-size: var(--font-size-1);
+    font-weight: var(--font-weight-6);
+  }
+
+  .experience {
+    margin-top: var(--size-fluid-6);
+  }
+
+  .experience h2 {
+    font-size: var(--font-size-fluid-1);
+    margin-block-end: var(--size-4);
+  }
+
+  .timeline {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: var(--size-5);
+  }
+
+  .timeline li {
+    border-inline-start: var(--border-size-2) solid var(--gray-4);
+    padding-inline-start: var(--size-4);
+  }
+
+  .timeline-header {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: var(--size-2);
+    margin-block-end: var(--size-1);
+  }
+
+  .timeline-header h3 {
+    font-size: var(--font-size-3);
+    margin: 0;
+  }
+
+  .dates {
+    flex-basis: 100%;
+    font-size: var(--font-size-0);
+    color: var(--gray-6);
+  }
+
+  .timeline li p {
+    font-size: var(--font-size-1);
+    color: var(--gray-7);
+    max-width: 65ch;
+    margin: 0;
+  }
+
   @media (max-width: 40em) {
     .hero {
       flex-direction: column;
@@ -71,6 +220,15 @@ import headshot from "../assets/headshot.jpg";
 
     .bio {
       max-width: none;
+    }
+
+    .links {
+      justify-content: center;
+    }
+
+    .timeline-header {
+      flex-direction: column;
+      gap: 0;
     }
   }
 </style>
