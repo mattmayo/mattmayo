@@ -102,11 +102,16 @@ const experience = [
 </Layout>
 
 <style>
+  :global(html) {
+    background: #140d02;
+  }
+
   :global(body) {
     margin: 0;
     background: #140d02;
     display: flex;
     justify-content: center;
+    overflow-x: hidden;
   }
 
   :global(main) {
@@ -217,6 +222,8 @@ const experience = [
 
   .listing {
     margin: 0 0 6px 16px;
+    max-width: calc(100% - 16px);
+    overflow-x: auto;
     font-size: 13.5px;
     line-height: 1.9;
     color: #e8a94f;
