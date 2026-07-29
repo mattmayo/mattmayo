@@ -78,7 +78,7 @@ const experience = [
 
     <p class="cmd"><span class="prompt">guest@mattmayo</span><span class="prompt-sym">:~$</span> whoami</p>
     <div class="whoami">
-      <Image src={headshot} alt="Matt Mayo" width={176} height={176} class="headshot" />
+      <Image src={headshot} alt="Matt Mayo" width={528} height={528} class="headshot" />
       <div>
         <h1 class="name">MATT_MAYO</h1>
         <p class="title">Senior Engineering Manager // Palo Alto, CA</p>
@@ -146,10 +146,10 @@ const experience = [
   }
 
   .screen {
-    max-width: 720px;
+    max-width: 900px;
     width: 100%;
     position: relative;
-    padding: clamp(40px, 7.7778vw, 56px) clamp(20px, 6.6667vw, 48px) clamp(48px, 8.8889vw, 64px);
+    padding: clamp(40px, 6.2222vw, 56px) clamp(0px, calc(69.2308px - 7.6923vw), 20px) clamp(48px, 7.1111vw, 64px);
     color: #ffb733;
     font-family: "Share Tech Mono", ui-monospace, monospace;
   }
@@ -193,23 +193,46 @@ const experience = [
 
   .whoami {
     display: flex;
+    flex-direction: column;
     gap: 20px;
-    align-items: center;
+    align-items: flex-start;
     margin: 8px 0 28px 16px;
   }
 
   .headshot {
-    width: 88px;
-    height: 88px;
+    width: 264px;
+    height: 264px;
     object-fit: cover;
     border: 1px solid #cf8c2f;
     filter: grayscale(1) contrast(1.3) brightness(0.9) sepia(1) hue-rotate(-10deg) saturate(4);
     transition: filter 0.35s ease;
     cursor: pointer;
+    animation: headshot-reveal 30s steps(1, jump-end) 30s infinite;
   }
 
   .headshot:hover {
+    animation: none;
     filter: none;
+  }
+
+  @keyframes headshot-reveal {
+    0%,
+    0.4333%,
+    0.8%,
+    5.1333%,
+    5.4333%,
+    5.7333%,
+    100% {
+      filter: grayscale(1) contrast(1.3) brightness(0.9) sepia(1) hue-rotate(-10deg) saturate(4);
+    }
+    0.2667%,
+    0.6333%,
+    1.0667%,
+    5%,
+    5.3%,
+    5.6% {
+      filter: none;
+    }
   }
 
   .name {
